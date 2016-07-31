@@ -15,10 +15,10 @@
 
 				// Client has to fill the claims and call the callback.
 				$.ajax({
-					url: "https://pilot-bots.kore.com/api/users/sts",
+					url: "https://devbots.kore.com/api/users/sts",
 					type: 'post',
 					headers: {
-						Authorization: "bearer Pau__EjUVfzuXChTBDtWnOD7tyKlMBSrUGPkYSuxhUoJcKjH74Fdo-vaQ0Q-FLp9"
+						Authorization: "bearer zoEO1Pv9s6wvec3yX9gRVhKnMiRS5oCywNtRHhTw-S_AGb81tSLfqJETptHSqKAr"
 					},
 					dataType: 'jsonp',
 					success: function (data) {
@@ -30,11 +30,11 @@
 
 			var botOptions = {};
 			botOptions.logLevel = 'debug';
-			botOptions.koreAPIUrl = "https://pilot-bots.kore.com/api/";
+			botOptions.koreAPIUrl = "https://devbots.kore.com/api/";
 			botOptions.assertionFn = assertion;
 			botOptions.isLoggedIn = false; // false: triggers anonymus flow. set it to true for log-in flow.
-			botOptions.clientId   = "cs-a19e7df5-dc25-5ecf-908c-c5caf708a654";
-			botOptions.botInfo =  {name:"IOCl Employee BOT","_id":"st-199d98c8-1447-51bb-a1a7-2be0c9c3510b"}; // pass bot name and stream id
+			botOptions.clientId   = "cs-23ffcffe-73f4-5105-b3d1-40754b6d4fb4";
+			botOptions.botInfo =  {name:"DHS AU","_id":"st-2b43561d-5cba-5e37-b416-9057ed7701bc"}; // pass bot name and stream id
 			
 			var chatConfig={
 				botOptions:botOptions

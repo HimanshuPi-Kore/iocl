@@ -18,7 +18,7 @@
 					url: "https://pilot-bots.kore.com/api/users/sts",
 					type: 'post',
 					headers: {
-						Authorization: "bearer 6pFhhdBbO3OFgEykQyd-JLMvoHVQvUaM-ZSQIw6mp1bIm30S-h4wXh7DbaRPLJNC"
+						Authorization: "bearer LzDdTMfRAlF0GD7Fn0PB0T11VtenKoPRCxCOiuEjM1P2-EEUvamBybp-veHUxEDG"
 					},
 					dataType: 'jsonp',
 					success: function (data) {
@@ -32,10 +32,10 @@
 			botOptions.logLevel = 'debug';
 			botOptions.koreAPIUrl = "https://pilot-bots.kore.com/api/";
 			botOptions.assertionFn = assertion;
-			botOptions.isLoggedIn = false; // false: triggers anonymus flow. set it to true for log-in flow.
-			botOptions.clientId   = "cs-b8885f01-c337-562e-9983-e80b63d6a713";
-			botOptions.botInfo =  {name:"IOCl Employee BOT","_id":"st-199d98c8-1447-51bb-a1a7-2be0c9c3510b"}; // pass bot name and stream id
-			
+			botOptions.clientId   = "cs-02d4510d-1b01-50b5-be7c-c30c1dc0f965";
+			botOptions.botInfo =  {name:"Field Force","_id":"st-f7087925-190e-54be-8bc6-09399b0bf131"}; // pass bot name and stream id
+			// botOptions.botInfo = {chatBot:"Field Force",taskBotId :"st-f7087925-190e-54be-8bc6-09399b0bf131"};
+
 			var chatConfig={
 				botOptions:botOptions
 			};

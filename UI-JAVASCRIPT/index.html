@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script src="libs/moment.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+		
+		<script src="/client/kore-bot-sdk-client.js"></script>
+		<script src="chatWindow.js" type="text/javascript"></script>
+		<link href="chatWindow.css" rel="stylesheet"></link>
+
+	</head>
+	<body background="/client/Bots_Platform.png">
+
+		<div id="chatContainer">
+			<button class="openChatWindow" id="openChatWindow">Open Chat Window</button>
+		</div>
+
+		<script type="text/javascript">
+
+			function assertion(options, callback) {
+
+				// Client has to fill the claims and call the callback.
+				$.ajax({
+					url: "https://pilot-bots.kore.com/api/users/sts",
+					type: 'post',
+					headers: {
+						Authorization: "bearer LzDdTMfRAlF0GD7Fn0PB0T11VtenKoPRCxCOiuEjM1P2-EEUvamBybp-veHUxEDG"
+					},
+					dataType: 'jsonp',
+					success: function (data) {
+						options.assertion = data.jwt
+						callback(null, options);
+					}
+				})
+			}
+
+			var botOptions = {};
+			botOptions.logLevel = 'debug';
+			botOptions.koreAPIUrl = "https://pilot-bots.kore.com/api/";
+			botOptions.assertionFn = assertion;
+
+			botOptions.clientId   = "cs-02d4510d-1b01-50b5-be7c-c30c1dc0f965";
+			botOptions.botInfo =  {name:"Field Force","_id":"st-f7087925-190e-54be-8bc6-09399b0bf131"}; // pass bot name and stream id
+			// botOptions.botInfo = {chatBot:"Field Force",taskBotId :"st-f7087925-190e-54be-8bc6-09399b0bf131"};
+
+			var chatConfig={
+				botOptions:botOptions
+			};
+
+			// koreBotChat().show(chatConfig);
+			document.getElementById('openChatWindow').addEventListener('click',function() {
+				koreBotChat().show(chatConfig);
+			});
+		</script>	
+	</body>
+</html>

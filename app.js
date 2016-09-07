@@ -14,11 +14,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', routes);
 
 app.get('/',function(req,res){
-   res.sendFile(__dirname+'/UI/index.html');
+   res.sendFile(__dirname+'/UI-JAVASCRIPT/index.html');
 });
 
 app.get('/:id',function(req,res){
-   res.sendFile(__dirname+'/UI/'+req.params.id);
+   res.sendFile(__dirname+'/UI-JAVASCRIPT/'+req.params.id);
 });
 
 app.get('/client/:id',function(req,res){
@@ -27,7 +27,7 @@ app.get('/client/:id',function(req,res){
 
 
 app.get('/libs/:id',function(req,res){
-   res.sendFile(__dirname+'/UI/libs/'+req.params.id);
+   res.sendFile(__dirname+'/UI-JAVASCRIPT/libs/'+req.params.id);
 });
 
 
